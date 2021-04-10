@@ -9,7 +9,7 @@ public class Beast {
 
     private PrintStream out = System.out;
 
-    private ArrayList<Integer> inventory = new ArrayList<>(64), abilities = new ArrayList<>(3);
+    private ArrayList<String> inventory = new ArrayList<>(64), abilities = new ArrayList<>(3);
     private float experience, health, startHealth, damage, speed;
     private Location location;
     private String type;
@@ -25,7 +25,7 @@ public class Beast {
 
     private boolean defence = false;
 
-    public Beast(ArrayList<Integer> inventory, ArrayList<Integer> abilities, float experience, float health, float damage, float speed, Location location, String type, int gold) {
+    public Beast(ArrayList<String> inventory, ArrayList<String> abilities, float experience, float health, float damage, float speed, Location location, String type, int gold) {
         this.inventory = inventory;
         this.abilities = abilities;
         this.experience = experience;
@@ -38,11 +38,11 @@ public class Beast {
         this.gold = gold;
     }
 
-    public void setInventory(ArrayList<Integer> inventory) {
+    public void setInventory(ArrayList<String> inventory) {
         this.inventory = inventory;
     }
 
-    public void setAbilities(ArrayList<Integer> abilities) {
+    public void setAbilities(ArrayList<String> abilities) {
         this.abilities = abilities;
     }
 
@@ -74,11 +74,11 @@ public class Beast {
         this.gold = gold;
     }
 
-    public ArrayList<Integer> getInventory() {
+    public ArrayList<String> getInventory() {
         return inventory;
     }
 
-    public ArrayList<Integer> getAbilities() {
+    public ArrayList<String> getAbilities() {
         return abilities;
     }
 
@@ -148,9 +148,6 @@ public class Beast {
     }
 
     public void move(Location nextLocation){
-        /*
-        TODO: дописать нормальную реализацию передвижения тварей
-         */
         location = nextLocation;
     }
 

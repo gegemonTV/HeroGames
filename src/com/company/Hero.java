@@ -7,18 +7,18 @@ public class Hero extends Beast {
 
     private PrintStream out = System.out;
 
-    public Hero(ArrayList<Integer> inventory, ArrayList<Integer> abilities, float experience, float health, float damage, float speed, Location location, String type, int gold) {
+    public Hero(ArrayList<String> inventory, ArrayList<String> abilities, float experience, float health, float damage, float speed, Location location, String type, int gold) {
         super(inventory, abilities, experience, health, damage, speed, location, type, gold);
     }
 
 
-    public void buy(int itemName, int price){  // метод покупки объекта
+    public void buy(String itemName, int price){  // метод покупки объекта
         if (price > super.getGold()){
             out.println("Not enough gold!");
         }
         else{
             if (super.getInventory().size() < 64){
-                ArrayList<Integer> newInventory = super.getInventory();
+                ArrayList<String> newInventory = super.getInventory();
                 newInventory.add(itemName);
                 super.setInventory(newInventory);
                 out.println("You got this: " + itemName);
@@ -31,9 +31,9 @@ public class Hero extends Beast {
         }
     }
 
-    public void carry(int objectToCarry){  // метод сбора объектов
+    public void carry(String objectToCarry){  // метод сбора объектов
         if (super.getInventory().size() < 64){
-            ArrayList<Integer> newInventory = super.getInventory();
+            ArrayList<String> newInventory = super.getInventory();
             newInventory.add(objectToCarry);
             super.setInventory(newInventory);
             out.println("You got this: " + objectToCarry);
