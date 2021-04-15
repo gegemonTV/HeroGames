@@ -9,7 +9,7 @@ public class Beast {
 
     private PrintStream out = System.out;
 
-    private ArrayList<String> inventory = new ArrayList<>(64), abilities = new ArrayList<>(3);
+    private ArrayList<String> inventory, abilities;
     private float experience, health, startHealth, damage, speed;
     private Location location;
     private String type;
@@ -133,18 +133,18 @@ public class Beast {
                 beast.setHealth(beast.getHealth() - damage);
                 out.println("You damaged " + type + ", its health for now: "+ String.valueOf(beast.getHealth()/beast.getStartHealth() * 100));
                 if (!defence){
+                    health -= beast.getDamage();
                     out.println("OUCH! It damaged you! Your health for now: " + (health/startHealth * 100));
                 }
             }
             else {
                 beast.die();
-                beast = null;
             }
         }
     }
 
     public void die(){
-        out.println(type + "died... Press F to Pay Respects...");
+        out.println(type + " died... Press F to Pay Respects...");
     }
 
     public void move(Location nextLocation){
