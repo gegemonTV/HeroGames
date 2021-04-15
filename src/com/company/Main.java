@@ -20,49 +20,29 @@ public class Main {
             Random random = new Random();
             int r = random.nextInt(5);
             System.out.print("["+String.valueOf(r)+"]: ");
-            switch(r){
-                case 0:
+            switch (r) {
+                case 0 -> {
                     player1.buy("someItem", 20);
                     System.out.println(player1.getInventory());
-                    break;
-                case 1:
-                    player1.respawn(new Location(new float[]{2,4,6}));
-                    break;
-                case 2:
-                    player1.attack(player2);
-                    break;
-                case 3:
-                    player1.carry("someObject");
-                    break;
-                case 4:
-                    player1.setDefence(true);
-                    break;
-                case 5:
-                    player1.setDefence(false);
-                    break;
+                }
+                case 1 -> player1.respawn(new Location(new float[]{2, 4, 6}));
+                case 2 -> player1.attack(player2);
+                case 3 -> player1.carry("someObject");
+                case 4 -> player1.setDefence(true);
+                case 5 -> player1.setDefence(false);
             }
             random.setSeed(1234054044);
             r = random.nextInt(5);
-            switch(r){
-                case 0:
+            switch (r) {
+                case 0 -> {
                     player2.buy("someItem", 20);
                     System.out.println(player2.getInventory());
-                    break;
-                case 1:
-                    player2.respawn(new Location(new float[]{2,4,6}));
-                    break;
-                case 2:
-                    player2.attack(player1);
-                    break;
-                case 3:
-                    player2.carry("someObject");
-                    break;
-                case 4:
-                    player2.setDefence(true);
-                    break;
-                case 5:
-                    player2.setDefence(false);
-                    break;
+                }
+                case 1 -> player2.respawn(new Location(new float[]{2, 4, 6}));
+                case 2 -> player2.attack(player1);
+                case 3 -> player2.carry("someObject");
+                case 4 -> player2.setDefence(true);
+                case 5 -> player2.setDefence(false);
             }
             if (player1.getHealth() <= 0){
                 System.out.println("Player 1 died...");
