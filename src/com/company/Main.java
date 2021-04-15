@@ -38,7 +38,8 @@ public class Main {
                     player1.setDefence(false);
                     break;
             }
-            switch(random.nextInt(5)){
+            r = random.nextInt(5);
+            switch(r){
                 case 0:
                     player2.buy("someItem", 20);
                     System.out.println(player2.getInventory());
