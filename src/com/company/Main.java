@@ -13,6 +13,9 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
 
         while (true){
+            if (player1.getHealth() <= 0 || player2.getHealth() <= 0){
+                break;
+            }
             TimeUnit.SECONDS.sleep(2);
             Random random = new Random();
             int r = random.nextInt(5);
@@ -38,6 +41,7 @@ public class Main {
                     player1.setDefence(false);
                     break;
             }
+            random.setSeed(1234054044);
             r = random.nextInt(5);
             switch(r){
                 case 0:
@@ -64,7 +68,7 @@ public class Main {
                 System.out.println("Player 1 died...");
                 break;
             }
-            else if (player2.getHealth()<=0){
+            if (player2.getHealth()<=0){
                 System.out.println("Player 2 died");
                 break;
             }
