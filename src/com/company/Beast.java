@@ -138,6 +138,7 @@ public class Beast {
                 }
             }
             else {
+                beast.setHealth(beast.getHealth() - damage);
                 beast.die();
             }
         }
